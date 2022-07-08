@@ -11,3 +11,23 @@ const myPromise = new Promise((resolve, reject) => {
     }
 })
 
+myPromise.then((data) => {
+    console.log(data)
+})
+
+const myPromise2 = new Promise((resolve, reject) => {
+
+
+    const nome = "Breno";
+
+    if(nome === "Daniel") {
+        resolve("Usuário Daniel encontrado")
+    } else {
+        reject("Usuário Daniel não encontrado!")
+    }
+})
+
+myPromise2.then((data) => {
+    console.log(data)
+})
+
