@@ -14,15 +14,14 @@ myPromise.then((data) => {
   console.log(data);
 });
 
-
 const myPromise2 = new Promise((resolve, reject) => {
-    const nome = "Breno";
-    
-    if (nome === "Daniel") {
-        resolve("Usuário Daniel encontrado");
-    } else {
-        reject("Usuário Daniel não encontrado!");
-    }
+  const nome = "Daniel";
+
+  if (nome === "Daniel") {
+    resolve("Usuário Daniel encontrado");
+  } else {
+    reject("Usuário Daniel não encontrado!");
+  }
 });
 
 // Encadeamento de Then's
@@ -32,4 +31,24 @@ myPromise2
   })
   .then((stringModified) => {
     console.log(stringModified);
+  });
+
+// Catch return
+
+const myPromise3 = new Promise((resolve, reject) => {
+  const nome = "Breno";
+
+  if (nome === "Daniel") {
+    resolve("Usuário Daniel encontrado");
+  } else {
+    reject("Usuário Daniel não encontrado!");
+  }
+});
+
+myPromise3
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.log("Erro: " + error);
   });
