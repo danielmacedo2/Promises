@@ -91,3 +91,21 @@ const p6 = new Promise((resolve,reject) => {
 const resolveAllRace = Promise.all([p4, p5, p6]).then((data) => {
   console.log(data)
 })
+
+// Fetch request API from GitHub
+// Fetch API
+
+const userName = "danielmacedo2"
+
+fetch(`https://api.github.com/users/${userName}`, {
+  method: "GET",
+  headers: {
+    Accept: 'application/vnd.github,v3+json'
+  }
+}).then((response) => {
+  console.log(response)
+  console.log(typeof response)
+  return response.json()
+}).then((data) => {
+  console.log(data)
+})
