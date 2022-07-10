@@ -52,3 +52,22 @@ myPromise3
   .catch((error) => {
     console.log("Erro: " + error);
   });
+
+
+// Resolve all promises
+
+const p1 = new Promise((resolve,reject) => {
+  setTimeout(() => {
+    resolve("P1 okay! Timeout")
+  }, 2000)
+})
+const p2 = new Promise((resolve,reject) => {
+  resolve("P2 okay")
+})
+const p3 = new Promise((resolve,reject) => {
+  resolve("P3 okay")
+})
+
+const resolveAll = Promise.all([p1, p2, p3]).then((data) => {
+  console.log(data)
+}) // A promessa é executada de forma assincrona ou seja ela não respeita o fluxo do código
