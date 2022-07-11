@@ -108,7 +108,10 @@ fetch(`https://api.github.com/users/${userName}`, {
     return response.json();
   })
   .then((data) => {
-    console.log(data);
-  });
+    console.log(`O nome do usuário é: ${data.name}`);
+  })
+  .catch((error) => {
+    console.log("Ocorreu o erro: " + error)
+  })
 
 
